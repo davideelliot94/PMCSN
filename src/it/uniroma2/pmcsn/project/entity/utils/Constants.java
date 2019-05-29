@@ -1,3 +1,5 @@
+package it.uniroma2.pmcsn.project.entity.utils;
+
 public class Constants {
 
     static double START = 0.0;
