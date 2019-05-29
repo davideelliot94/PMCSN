@@ -6,6 +6,17 @@ public class Distributions {
 
     private Rngs rngs = new Rngs();
 
+    public double Uniform(double a, double b){
+
+        if (a < b){
+
+
+        }
+
+        return (a + (b - a) * rngs.random());
+        
+    }
+
     public double Exponential(double m){
 
         if (m <= 0){
