@@ -4,16 +4,19 @@ import it.uniroma2.pmcsn.project.entity.distributions.Distributions;
 
 public class NextEvent {
 
+    private int init = 0;
+    private double[] mean = new double[]{1 / Constants.ARRIVALONE, 1 / Constants.ARRIVALTWO};
+    private double[] arrivals = new double[]{Constants.START, Constants.START};
+
     public double getArrivalCloudlet(int taskType, int newReplication) {
 
         if (taskType != 1 && taskType != 2) {
             // gestisci errore
         }
 
-        double[] mean = new double[]{1 / Constants.ARRIVALONE, 1 / Constants.ARRIVALTWO};
-        double[] arrivals = new double[]{Constants.START, Constants.START};
 
-        static int init = 0;
+
+
         if (newReplication == 1) {
 
             init = 0;
