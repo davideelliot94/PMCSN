@@ -1,6 +1,6 @@
-package it.uniroma2.pmcsn.project.entity.distributions;
+package it.uniroma2.pmcsn.project.distributions;
 
-import it.uniroma2.pmcsn.project.entity.utils.Rngs;
+import it.uniroma2.pmcsn.project.utils.Rngs;
 
 public class Distributions {
 
@@ -14,7 +14,7 @@ public class Distributions {
         }
 
         return (a + (b - a) * rngs.random());
-        
+
     }
 
     public double Exponential(double m){

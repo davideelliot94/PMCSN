@@ -1,4 +1,4 @@
-package it.uniroma2.pmcsn.project.entity.utils;
+package it.uniroma2.pmcsn.project.utils;
 /* ------------------------------------------------------------------------- 
  * This is a Java library that can be used to evaluate the probability 
  * density functions (pdf's), cumulative distribution functions (cdf's), and 

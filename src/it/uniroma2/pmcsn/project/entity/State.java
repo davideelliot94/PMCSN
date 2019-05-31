@@ -24,7 +24,7 @@ public class State {
     private  int num_task_type2;
 
     private  int num_task_interrupted;
-    int num_job_interr_in_list;
+    private int num_job_interr_in_list;
 
     public int getNum_task_type2_directed_on_cloud() {
         return num_task_type2_directed_on_cloud;

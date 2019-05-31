@@ -195,4 +195,35 @@ public class Area {
     private double type1_v;
     private double type2_v;
     private double job_interr_v;
+
+    //funzione che aggiorna tutti i tipi di aree
+    //area_tipo=(timeNext-timeCurrent)*popolazione_tipo
+    public Area updateArea(State state, Area area, double timeCurrent, double timeNext){
+
+        if(area == null){
+            //handle_error_with_exit("error in update area\n");
+        }
+        if(timeCurrent > timeNext){
+            //handle_error_with_exit("error in update area1\n");
+        }
+        if(timeCurrent < 0){
+            //handle_error_with_exit("error in update area2\n");
+        }
+        if(timeNext < 0){
+            //handle_error_with_exit("error in update area3\n");
+        }
+
+        area.setSystem(area.getSystem() + (timeNext - timeCurrent) * (state.getN1() + state.getN2() + state.getN1_cloud() + state.getN2_cloud()));
+        area.setCloudlet(area.getCloudlet() + (timeNext-timeCurrent)*(state.getN1()+state.getN2()));
+        area.setCloud(area.getCloud() + (timeNext-timeCurrent)*(state.getN1_cloud()+state.getN2_cloud()));
+        area.setType1(area.getType1() + (timeNext-timeCurrent)*(state.getN1()+state.getN1_cloud()));
+        area.setType2(area.getType2() + (timeNext-timeCurrent)*(state.getN2()+state.getN2_cloud()));
+        area.setJob_interr(area.getJob_interr() + (timeNext-timeCurrent)*(state.getNum_job_interr_in_list()));
+        area.setCloud_type1(area.getCloud_type1() + (timeNext-timeCurrent)*state.getN1_cloud());
+        area.setCloud_type2(area.getCloud_type2() + (timeNext-timeCurrent)*state.getN2_cloud());
+        area.setCloudlet_type1(area.getCloudlet_type1() + (timeNext-timeCurrent)*state.getN1());
+        area.setCloudlet_type2(area.getCloudlet_type2() + (timeNext-timeCurrent)*(state.getN2()));
+
+        return area;
+    }
 }
